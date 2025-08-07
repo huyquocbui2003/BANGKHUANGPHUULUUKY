@@ -14,9 +14,10 @@
         height: 100vh;
         background: linear-gradient(135deg, #e0f7fa, #fce4ec);
         font-family: "Segoe UI", sans-serif;
-        color: #ff4081;
+        color: #ff4081; /* Màu chữ hồng */
         opacity: 0;
         animation: fadeIn 1s forwards;
+        overflow: hidden; /* Ngăn cuộn trang nếu các vật thể bay ra ngoài */
       }
       h1 {
         font-size: 3em;
@@ -41,36 +42,65 @@
         animation-delay: -0.16s;
       }
 
+      /* Hiệu ứng cỏ 3 lá */
+      .clover-leaf {
+        position: fixed;
+        font-size: 2em; /* Giảm kích thước một chút để không quá choáng ngợp */
+        opacity: 0;
+        animation: flyAndFade 4s forwards;
+      }
+      /* Tạo nhiều vị trí xuất phát ngẫu nhiên hơn */
+      .clover-leaf:nth-child(1) { top: 15%; left: 5%; animation-delay: 0.2s; }
+      .clover-leaf:nth-child(2) { bottom: 25%; right: 10%; animation-delay: 0.8s; }
+      .clover-leaf:nth-child(3) { top: 10%; right: 20%; animation-delay: 1.2s; }
+      .clover-leaf:nth-child(4) { bottom: 10%; left: 20%; animation-delay: 1.8s; }
+      .clover-leaf:nth-child(5) { top: 30%; right: 5%; animation-delay: 2.2s; }
+      .clover-leaf:nth-child(6) { bottom: 15%; left: 10%; animation-delay: 2.8s; }
+      .clover-leaf:nth-child(7) { top: 5%; left: 15%; animation-delay: 0.5s; }
+      .clover-leaf:nth-child(8) { bottom: 30%; right: 15%; animation-delay: 1.5s; }
+      .clover-leaf:nth-child(9) { top: 20%; right: 25%; animation-delay: 2.5s; }
+      .clover-leaf:nth-child(10) { bottom: 5%; left: 25%; animation-delay: 3.0s; }
+
       /* Hiệu ứng mờ dần */
       @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
+        from { opacity: 0; }
+        to { opacity: 1; }
       }
       @keyframes fadeOut {
-        from {
-          opacity: 1;
-        }
-        to {
-          opacity: 0;
-        }
+        from { opacity: 1; }
+        to { opacity: 0; }
       }
       @keyframes bounce {
-        0%,
-        80%,
-        100% {
-          transform: scale(0);
+        0%, 80%, 100% { transform: scale(0); }
+        40% { transform: scale(1); }
+      }
+      @keyframes flyAndFade {
+        0% {
+          transform: scale(0.3) rotate(0deg);
+          opacity: 0;
         }
-        40% {
-          transform: scale(1);
+        50% {
+          transform: scale(1) rotate(180deg);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(0.3) rotate(360deg) translate(0, -150px);
+          opacity: 0;
         }
       }
     </style>
   </head>
   <body>
+    <div class="clover-leaf">🍀</div>
+    <div class="clover-leaf">🍀</div>
+    <div class="clover-leaf">🍀</div>
+    <div class="clover-leaf">🍀</div>
+    <div class="clover-leaf">🍀</div>
+    <div class="clover-leaf">🍀</div>
+    <div class="clover-leaf">🍀</div>
+    <div class="clover-leaf">🍀</div>
+    <div class="clover-leaf">🍀</div>
+    <div class="clover-leaf">🍀</div>
     <div class="loading-container">
       <h1>Locket Huy</h1>
       <div class="loading-dots">
@@ -80,13 +110,13 @@
       </div>
     </div>
     <script>
-      // Chuyển hướng sau 2 giây (bao gồm cả thời gian hiệu ứng)
+      // Chuyển hướng sau 4 giây
       setTimeout(() => {
         document.body.style.animation = "fadeOut 1s forwards";
         setTimeout(() => {
           window.location.href = "giaodien.html";
         }, 1000);
-      }, 2000);
+      }, 4000);
     </script>
   </body>
 </html>
