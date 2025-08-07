@@ -1,13 +1,92 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
   <head>
-    <meta http-equiv="refresh" content="0; url=giaodien.html" />
-    <title>Chuyển hướng...</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đang tải trang...</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: linear-gradient(135deg, #e0f7fa, #fce4ec);
+        font-family: "Segoe UI", sans-serif;
+        color: #ff4081;
+        opacity: 0;
+        animation: fadeIn 1s forwards;
+      }
+      h1 {
+        font-size: 3em;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .loading-container {
+        text-align: center;
+      }
+      .loading-dots span {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background-color: #ff80ab;
+        border-radius: 50%;
+        margin: 0 5px;
+        animation: bounce 1.4s infinite ease-in-out both;
+      }
+      .loading-dots span:nth-child(1) {
+        animation-delay: -0.32s;
+      }
+      .loading-dots span:nth-child(2) {
+        animation-delay: -0.16s;
+      }
+
+      /* Hiệu ứng mờ dần */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes fadeOut {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 0;
+        }
+      }
+      @keyframes bounce {
+        0%,
+        80%,
+        100% {
+          transform: scale(0);
+        }
+        40% {
+          transform: scale(1);
+        }
+      }
+    </style>
   </head>
   <body>
-    <p>
-      Trang web đang được chuyển hướng đến
-      <a href="giaodien.html">trang chủ</a>.
-    </p>
+    <div class="loading-container">
+      <h1>Locket Huy</h1>
+      <div class="loading-dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <script>
+      // Chuyển hướng sau 2 giây (bao gồm cả thời gian hiệu ứng)
+      setTimeout(() => {
+        document.body.style.animation = "fadeOut 1s forwards";
+        setTimeout(() => {
+          window.location.href = "giaodien.html";
+        }, 1000);
+      }, 2000);
+    </script>
   </body>
 </html>
