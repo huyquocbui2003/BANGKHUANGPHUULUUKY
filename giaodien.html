@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BÂNG KHUÂNG PHƯU LƯU KÝ</title>
+    <title>BÂNG KHUÂNG - PHƯU LƯU KÝ</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -20,18 +20,27 @@
         padding: 0;
       }
       .top-buttons-container {
-        position: fixed;
+        position: sticky;
         top: 20px;
         left: 20px;
         z-index: 1000;
         display: flex;
         gap: 10px;
+        padding: 10px;
+        background-color: transparent;
+        border-radius: 10px;
+        box-shadow: none;
       }
       .home-button,
-      .drive-button {
+      .drive-button,
+      .calendar-button {
         display: flex;
         align-items: center;
-        background: linear-gradient(to right, #ff4081, #ff80ab);
+        background: linear-gradient(
+          to right,
+          #ff80ab,
+          #f48fb1
+        );
         color: white;
         border: none;
         padding: 10px 15px;
@@ -43,7 +52,8 @@
         text-decoration: none;
       }
       .home-button:hover,
-      .drive-button:hover {
+      .drive-button:hover,
+      .calendar-button:hover {
         transform: scale(1.05);
       }
       .main-content {
@@ -52,23 +62,7 @@
         gap: 20px;
         padding: 20px;
         flex-wrap: wrap;
-      }
-      .calendar-button {
-        display: flex;
-        align-items: center;
-        background: linear-gradient(to right, #ff4081, #ff80ab);
-        color: white;
-        border: none;
-        padding: 10px 15px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-weight: bold;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        transition: transform 0.2s;
-        text-decoration: none;
-      }
-      .calendar-button:hover {
-        transform: scale(1.05);
+        margin-top: 60px;
       }
       .container {
         max-width: 600px;
@@ -105,7 +99,7 @@
         margin: 6px 4px 6px 0;
         border: none;
         border-radius: 6px;
-        background: linear-gradient(to right, #ff4081, #ff80ab);
+        background: linear-gradient(to right, #ff80ab, #f48fb1);
         color: white;
         font-weight: bold;
         cursor: pointer;
@@ -328,9 +322,45 @@
         background: linear-gradient(to right, #ffb74d, #ff80ab);
         color: #fff;
       }
+      #clover-reload-icon {
+        position: fixed;
+        font-size: 2em;
+        cursor: grab;
+        z-index: 1001;
+        user-select: none;
+        transition: transform 0.2s ease-in-out;
+        bottom: 20px;
+        right: 20px;
+      }
+      #clover-reload-icon:active {
+        cursor: grabbing;
+      }
+
+      /* Style for the embedded guide */
+      .guide-header {
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 8px;
+        background-color: #ff80ab;
+        color: white;
+        text-align: center;
+        font-weight: bold;
+        transition: background-color 0.3s;
+        margin-bottom: 10px; /* Thêm khoảng cách với phần còn lại của footer */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        text-decoration: none; /* Bỏ gạch chân cho link */
+      }
+      .guide-header:hover {
+        background-color: #d81b60;
+      }
     </style>
   </head>
   <body>
+    <div id="clover-reload-icon">🍀</div>
+
     <div class="top-buttons-container">
       <a class="home-button" href="giaodien.html">
         <i class="fas fa-home"></i> Home
@@ -340,7 +370,7 @@
         href="https://drive.google.com/drive/folders/1cR4KwCDcmGDenk9qNfdYm23x5a2c-t3n?usp=sharing"
         target="_blank"
       >
-        <i class="fas fa-folder"></i> Drive
+        <i class="fas fa-folder"></i> Lưu trữ
       </a>
       <a class="calendar-button" href="calendar.html">
         <i class="fas fa-calendar-alt"></i> Lịch
@@ -399,6 +429,29 @@
           placeholder="Thêm công việc mới..."
         />
         <button class="note-button" onclick="addNoteItem()">Thêm</button>
+      </div>
+    </div>
+
+    <div class="footer">
+      <a href="huong_dan_su_dung.html" class="guide-header">
+        <i class="fas fa-info-circle"></i> Hướng dẫn sử dụng
+      </a>
+      
+      <hr style="border-color:#f48fb1; margin: 20px 0;">
+      <div>
+        <i class="fas fa-user"></i><span class="label">Website created by:</span> Bùi Quốc Huy
+      </div>
+      <div>
+        <i class="fab fa-facebook"></i><span class="label">Facebook:</span>
+        <a href="https://www.facebook.com/bangkhuang187" target="_blank"
+          >facebook.com/bangkhuang187</a
+        >
+      </div>
+      <div>
+        <i class="fas fa-phone"></i><span class="label">Phone:</span> 0905640544
+      </div>
+      <div>
+        <i class="fas fa-code-branch"></i><span class="label">Version:</span> 0.0.2 (Cập nhật)
       </div>
     </div>
 
@@ -513,7 +566,7 @@
           } /> <span>Hoàn thành tất cả</span></label>
           </div>
           <div class="status-time">
-            ${formatTimeAgo(new Date(status.timestamp))} - 
+            ${formatTimeAgo(new Date(status.timestamp))} -
             ${new Date(status.timestamp).toLocaleDateString("vi-VN", {
               day: "2-digit",
               month: "2-digit",
@@ -690,24 +743,35 @@
         loadImportantNotes();
       });
     </script>
-    <div class="footer">
-      <div>
-        <i class="fas fa-user"></i
-        ><span class="label">Website created by:</span> Bùi Quốc Huy
-      </div>
-      <div>
-        <i class="fab fa-facebook"></i><span class="label">Facebook:</span>
-        <a href="https://www.facebook.com/bangkhuang187" target="_blank"
-          >facebook.com/bangkhuang187</a
-        >
-      </div>
-      <div>
-        <i class="fas fa-phone"></i><span class="label">Phone:</span> 0905640544
-      </div>
-      <div>
-        <i class="fas fa-code-branch"></i
-        ><span class="label">Version:</span> 0.0.2 (Cập nhật)
-      </div>
-    </div>
+    <script>
+      const cloverIcon = document.getElementById("clover-reload-icon");
+      let isDragging = false;
+      let offsetX, offsetY;
+
+      cloverIcon.addEventListener("mousedown", (e) => {
+        isDragging = true;
+        cloverIcon.style.cursor = "grabbing";
+        offsetX = e.clientX - cloverIcon.getBoundingClientRect().left;
+        offsetY = e.clientY - cloverIcon.getBoundingClientRect().top;
+      });
+
+      document.addEventListener("mousemove", (e) => {
+        if (!isDragging) return;
+        cloverIcon.style.left = e.clientX - offsetX + "px";
+        cloverIcon.style.top = e.clientY - offsetY + "px";
+      });
+
+      document.addEventListener("mouseup", () => {
+        if (!isDragging) return;
+        isDragging = false;
+        cloverIcon.style.cursor = "grab";
+      });
+
+      cloverIcon.addEventListener("click", (e) => {
+        if (!isDragging) {
+          window.location.href = "index.html";
+        }
+      });
+    </script>
   </body>
 </html>
