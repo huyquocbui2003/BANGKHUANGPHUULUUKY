@@ -3,14 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hướng dẫn sử dụng</title>
+    <title>Hướng Dẫn Sử Dụng</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
     />
     <style>
       body {
@@ -18,6 +14,8 @@
         background: linear-gradient(135deg, #e0f7fa, #fce4ec);
         margin: 0;
         padding: 0;
+        line-height: 1.6;
+        color: #444;
       }
       .top-buttons-container {
         position: sticky;
@@ -36,7 +34,11 @@
       .calendar-button {
         display: flex;
         align-items: center;
-        background: linear-gradient(to right, #ff80ab, #f48fb1);
+        background: linear-gradient(
+          to right,
+          #ff80ab,
+          #f48fb1
+        );
         color: white;
         border: none;
         padding: 10px 15px;
@@ -52,216 +54,162 @@
       .calendar-button:hover {
         transform: scale(1.05);
       }
-      .main-content {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        padding: 20px;
-        flex-wrap: wrap;
-        margin-top: 60px;
-      }
       .container {
-        max-width: 900px;
-        flex-grow: 1;
-        background-color: #fff;
+        max-width: 800px;
+        margin: 80px auto 20px;
         padding: 20px;
+        background-color: #fff;
         border-radius: 10px;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
       }
-      h1,
-      h2,
-      h3 {
-        text-align: center;
-        color: #ff4081;
-      }
       h1 {
         text-align: center;
-        border-bottom: 2px solid #ff4081;
-        padding-bottom: 10px;
+        color: #ff4081;
+        margin-bottom: 20px;
+      }
+      h2 {
+        color: #c2185b;
+        border-bottom: 2px solid #fce4ec;
+        padding-bottom: 5px;
+        margin-top: 30px;
       }
       ul {
-        list-style-type: none;
-        padding-left: 0;
+        list-style-type: disc;
+        padding-left: 20px;
       }
       li {
         margin-bottom: 10px;
       }
-      .section {
-        margin-bottom: 20px;
-        border-bottom: 1px dashed #f48fb1;
-        padding-bottom: 15px;
-      }
-      .section:last-child {
-        border-bottom: none;
-      }
-      .section h2 {
-        text-align: left;
-        color: #c2185b;
-        margin-top: 0;
-      }
-      .section ul {
-        list-style-type: disc;
-        padding-left: 20px;
-        color: #555;
-      }
       strong {
         color: #c2185b;
       }
-      .footer {
-        margin-top: 40px;
-        padding: 20px;
-        background: linear-gradient(90deg, #ffe0f0, #e0f7fa);
-        font-family: "Segoe UI", sans-serif;
-        font-size: 14px;
-        color: #444;
-        border-top: 1px solid #ddd;
-        text-align: center;
-        border-radius: 10px;
-      }
-      .footer a {
-        color: #ff4081;
-        text-decoration: none;
-        font-weight: bold;
-      }
-      .footer a:hover {
-        text-decoration: underline;
-      }
-      .footer .label {
-        color: #888;
-        font-weight: normal;
-      }
-      .footer i {
-        margin-right: 5px;
-        color: #ff4081;
-      }
-      .footer div {
-        margin: 5px 0;
+      code {
+        background-color: #fce4ec;
+        padding: 2px 5px;
+        border-radius: 3px;
+        font-family: monospace;
       }
     </style>
   </head>
   <body>
     <div class="top-buttons-container">
-      <a class="home-button" href="#">
+      <a class="home-button" href="giaodien.html">
         <i class="fas fa-home"></i> Home
       </a>
-      <a class="drive-button" href="#" target="_blank">
+      <a
+        class="drive-button"
+        href="https://drive.google.com/drive/folders/1cR4KwCDcmGDenk9qNfdYm23x5a2c-t3n?usp=sharing"
+        target="_blank"
+      >
         <i class="fas fa-folder"></i> Lưu trữ
       </a>
-      <a class="calendar-button" href="#">
+      <a class="calendar-button" href="calendar.html">
         <i class="fas fa-calendar-alt"></i> Lịch
       </a>
     </div>
 
-    <div class="main-content">
-      <div class="container">
-        <h1><i class="fas fa-info-circle"></i> Hướng dẫn sử dụng giao diện web</h1>
-        <p>
-          Giao diện web này được thiết kế để bạn quản lý công việc và nhật ký học
-          tập một cách dễ dàng. Dưới đây là các phần chính và cách sử dụng chúng:
-        </p>
+    <div class="container">
+      <h1>Hướng Dẫn Sử Dụng Giao Diện Web</h1>
+      <p>
+        Giao diện web này được thiết kế để bạn quản lý công việc và nhật ký học
+        tập một cách dễ dàng. Dưới đây là các phần chính và cách sử dụng chúng:
+      </p>
 
-        <div class="section">
-          <h2>1. Thanh điều hướng</h2>
-          <p>Thanh điều hướng ở góc trên bên trái màn hình bao gồm ba nút chính:</p>
-          <ul>
-            <li><strong>Home:</strong> Quay lại trang chính.</li>
-            <li><strong>Lưu trữ:</strong> Mở Google Drive để lưu trữ tài liệu.</li>
-            <li><strong>Lịch:</strong> Chuyển đến trang lịch để theo dõi sự kiện.</li>
-          </ul>
-        </div>
+      <h2>1. Thanh điều hướng</h2>
+      <p>Thanh điều hướng ở góc trên bên trái màn hình bao gồm ba nút chính:</p>
+      <ul>
+        <li>
+          <strong>Home:</strong> Quay lại trang chính (<code>giaodien.html</code>).
+        </li>
+        <li>
+          <strong>Lưu trữ:</strong> Mở Google Drive để lưu trữ tài liệu.
+        </li>
+        <li>
+          <strong>Lịch:</strong> Chuyển đến trang lịch (<code>calendar.html</code>)
+          để theo dõi sự kiện.
+        </li>
+      </ul>
 
-        <div class="section">
-          <h2>2. Nhật ký học tập</h2>
-          <p>
-            Khu vực trung tâm để bạn đăng các bài viết nhật ký hoặc công việc cần
-            làm.
-          </p>
-          <ul>
-            <li><strong>Tiêu đề bài viết:</strong> Nhập tiêu đề.</li>
-            <li><strong>Nội dung bài viết:</strong> Viết nội dung chi tiết.</li>
-            <li><strong>Tải ảnh lên:</strong> Tải lên hình ảnh liên quan.</li>
-            <li><strong>Hoàn thành:</strong> Đánh dấu công việc đã hoàn thành.</li>
-            <li>
-              <strong>Lọc theo ngày:</strong> Nhập ngày (`YYYY-MM-DD`) để xem bài
-              viết cụ thể.
-            </li>
-            <li><strong>Đăng:</strong> Đăng bài viết mới.</li>
-          </ul>
-        </div>
+      <h2>2. Nhật ký học tập</h2>
+      <p>
+        Khu vực trung tâm để bạn đăng các bài viết nhật ký hoặc công việc cần
+        làm.
+      </p>
+      <ul>
+        <li>
+          <strong>Tiêu đề bài viết:</strong> Nhập tiêu đề cho bài viết của bạn.
+        </li>
+        <li>
+          <strong>Nội dung bài viết:</strong> Viết nội dung chi tiết.
+        </li>
+        <li>
+          <strong>Tải ảnh lên:</strong> Tải lên hình ảnh liên quan.
+        </li>
+        <li>
+          <strong>Hoàn thành:</strong> Đánh dấu công việc đã hoàn thành.
+        </li>
+        <li>
+          <strong>Lọc theo ngày:</strong> Nhập ngày (<code>YYYY-MM-DD</code>) để
+          xem các bài viết cụ thể.
+        </li>
+        <li><strong>Đăng:</strong> Đăng bài viết mới.</li>
+      </ul>
 
-        <div class="section">
-          <h2>3. Danh sách trạng thái</h2>
-          <p>
-            Mỗi bài viết sau khi đăng sẽ có các tùy chọn:
-          </p>
-          <ul>
-            <li><strong>Hoàn thành tất cả:</strong> Đánh dấu tất cả công việc trong bài viết là đã hoàn thành.</li>
-            <li><strong>Sửa:</strong> Chỉnh sửa nội dung bài viết.</li>
-            <li><strong>Xóa:</strong> Xóa bài viết.</li>
-            <li><strong>Nhật ký chỉnh sửa:</strong> Xem lịch sử các lần chỉnh sửa.</li>
-            <li><strong>Thêm ghi chú:</strong> Thêm ghi chú vào bài viết.</li>
-          </ul>
-        </div>
+      <h2>3. Danh sách trạng thái</h2>
+      <p>Mỗi bài viết sau khi đăng sẽ có các tùy chọn:</p>
+      <ul>
+        <li>
+          <strong>Hoàn thành tất cả:</strong> Đánh dấu tất cả công việc trong
+          bài viết là đã hoàn thành.
+        </li>
+        <li><strong>Sửa:</strong> Chỉnh sửa nội dung bài viết.</li>
+        <li><strong>Xóa:</strong> Xóa bài viết.</li>
+        <li>
+          <strong>Nhật ký chỉnh sửa:</strong> Xem lịch sử các lần chỉnh sửa.
+        </li>
+        <li><strong>Thêm ghi chú:</strong> Thêm ghi chú vào bài viết.</li>
+      </ul>
 
-        <div class="section">
-          <h2>4. Ghi chú công việc</h2>
-          <p>
-            Phần này giúp bạn tạo và quản lý danh sách công việc đơn giản.
-          </p>
-          <ul>
-            <li><strong>Thêm công việc mới:</strong> Nhập tên và nhấn "Thêm".</li>
-            <li><strong>Tích vào ô vuông:</strong> Đánh dấu công việc đã hoàn thành.</li>
-            <li><strong>Xóa:</strong> Xóa một công việc.</li>
-          </ul>
-        </div>
+      <h2>4. Ghi chú công việc</h2>
+      <p>
+        Phần này giúp bạn tạo và quản lý danh sách công việc đơn giản ở bên
+        phải màn hình.
+      </p>
+      <ul>
+        <li>
+          <strong>Thêm công việc mới:</strong> Nhập tên và nhấn "Thêm".
+        </li>
+        <li>
+          <strong>Tích vào ô vuông:</strong> Đánh dấu công việc đã hoàn thành.
+        </li>
+        <li><strong>Xóa:</strong> Xóa một công việc.</li>
+      </ul>
 
-        <div class="section">
-          <h2>5. Lưu ý quan trọng</h2>
-          <p>
-            Bảng đen ảo để bạn ghi lại những điều quan trọng:
-          </p>
-          <ul>
-            <li><strong>Nhập lưu ý:</li>
-            <li><strong>Lưu:</strong> Lưu nội dung (sẽ được giữ lại khi tải lại trang).</li>
-            <li><strong>Xóa:</strong> Xóa toàn bộ nội dung đã lưu.</li>
-          </ul>
-        </div>
+      <h2>5. Lưu ý quan trọng</h2>
+      <p>
+        Bảng đen ảo ở góc trên bên trái để bạn ghi lại những điều quan trọng.
+      </p>
+      <ul>
+        <li>
+          <strong>Nhập lưu ý:</strong> Viết lưu ý vào ô văn bản.
+        </li>
+        <li>
+          <strong>Lưu:</strong> Lưu nội dung (sẽ được giữ lại khi tải lại
+          trang).
+        </li>
+        <li>
+          <strong>Xóa:</strong> Xóa toàn bộ nội dung đã lưu.
+        </li>
+      </ul>
 
-        <div class="section">
-          <h2>6. Biểu tượng Cỏ ba lá (🍀)</h2>
-          <p>Biểu tượng ở góc dưới bên phải màn hình:</p>
-          <ul>
-            <li><strong>Kéo:</strong> Di chuyển biểu tượng đến vị trí bất kỳ.</li>
-            <li><strong>Nhấn:</strong> Tải lại trang về mặc định.</li>
-          </ul>
-        </div>
-
-        <div class="section">
-          <h2>7. Chân trang</h2>
-          <p>
-            Hiển thị thông tin về người tạo, liên kết Facebook, số điện thoại và
-            phiên bản của giao diện web.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer">
-      <div>
-        <i class="fas fa-user"></i><span class="label">Website created by:</span> Bùi Quốc Huy
-      </div>
-      <div>
-        <i class="fab fa-facebook"></i><span class="label">Facebook:</span>
-        <a href="https://www.facebook.com/bangkhuang187" target="_blank"
-          >facebook.com/bangkhuang187</a
-        >
-      </div>
-      <div>
-        <i class="fas fa-phone"></i><span class="label">Phone:</span> 0905640544
-      </div>
-      <div>
-        <i class="fas fa-code-branch"></i><span class="label">Version:</span> 0.0.2 (Cập nhật)
-      </div>
+      <h2>6. Biểu tượng Cỏ ba lá (🍀)</h2>
+      <p>Biểu tượng ở góc dưới bên phải màn hình:</p>
+      <ul>
+        <li>
+          <strong>Kéo:</strong> Di chuyển biểu tượng đến vị trí bất kỳ.
+        </li>
+        <li><strong>Nhấn:</strong> Tải lại trang về mặc định.</li>
+      </ul>
     </div>
   </body>
 </html>
